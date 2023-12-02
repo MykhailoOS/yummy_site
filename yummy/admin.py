@@ -8,8 +8,8 @@ admin.site.register(DishCategory)
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
-    list_display = ('id', 'category', 'name', 'price', 'is_visible', 'photo_src_tag')
-    list_editable = ('category', 'name', 'price', 'is_visible')
+    list_display = ('id', 'category', 'name', 'price', 'is_visible', 'photo_src_tag', 'is_special', 'with_discount')
+    list_editable = ('category', 'name', 'price', 'is_visible', 'is_special', 'with_discount')
     search_fields = ('name',)
     list_filter = ('category', 'price', 'is_visible')
 
