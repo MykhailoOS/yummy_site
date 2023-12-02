@@ -52,17 +52,6 @@ class Gallery(models.Model):
     title = models.CharField(max_length=255, blank=True)
 
 
-class OurMenu(models.Model):
-    tittle = models.CharField(max_length=255, unique=True)
-    description = models.TextField(blank=True)
-    photo = models.ImageField(upload_to='menu/', blank=True)
-    dishes = models.ForeignKey(Dish, on_delete=models.PROTECT, related_name='dishes')
-
-    def __str__(self):
-        return f'{self.tittle}'
-
-    class Meta:
-        verbose_name_plural = 'SpecialDishes'
 
 
     
